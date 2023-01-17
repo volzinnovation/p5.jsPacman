@@ -102,7 +102,7 @@ class Pacman extends Character {
         else if (!this._eatenTurnsFrames) {
             if (this._eatenTurns === 9) this.emit('item:die');
             if (this._eatenTurns > 2) {
-                var directions = {'d' : 'l', 'l' : 'u', 'u' : 'r', 'r' : 'd'};
+                let directions = {'d' : 'l', 'l' : 'u', 'u' : 'r', 'r' : 'd'};
                 this.dir = directions[this.dir];
                 this._setNextAnimation();
                 this.update();

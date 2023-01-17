@@ -9,7 +9,7 @@ class Bonuses {
 
         this.model = options.model;
 
-        for (var i = 0; i < 8; i++) {
+        for (let i = 0; i < 8; i++) {
             let bonus = makeBonus(i, {
                 x : options.x - i * 64,
                 y : options.y,
@@ -28,7 +28,7 @@ class Bonuses {
     }
 
     render() {
-        for (var i = 0; i < 8; i++) {
+        for (let i = 0; i < 8; i++) {
             if (i >= this.model.level) this.bonuses[i].hide();
             else this.bonuses[i].show();
         }

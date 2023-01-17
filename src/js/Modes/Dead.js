@@ -29,8 +29,8 @@ class Dead extends Mode {
             this.onExit();
 
         } else if (this._prepareEnter) {
-            var endX = this._endX;
-            var endY = this._endY;
+            let endX = this._endX;
+            let endY = this._endY;
             // Should go to center first
             if (this.ghost.y < endY) endX = this._target.x - this.ghost.map.tw / 2;
             // Set direction
@@ -78,7 +78,7 @@ class Dead extends Mode {
     canGo(dir, tile) {
         if (!tile) tile = this.ghost.getTile();
 
-        var nextTile = tile.get(dir);
+        let nextTile = tile.get(dir);
 
         return !nextTile || !nextTile.isWall();
     }
@@ -88,7 +88,7 @@ class Dead extends Mode {
     }
 
     onExit() {
-        // var attrs = this.ghost.id === 'bot-blinky' ? {x : this.ghost.x, y : this.ghost.y} : {};
+        // let attrs = this.ghost.id === 'bot-blinky' ? {x : this.ghost.x, y : this.ghost.y} : {};
         this.ghost.reset();
     }
 }

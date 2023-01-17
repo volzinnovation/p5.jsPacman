@@ -15,8 +15,8 @@ export default (label, options) => {
             dir : 'd',
             defaultAnimation : 'down',
             getChaseTarget : function() {
-                var t = this.pacmanData.tile;
-                var dir = this.pacmanData.dir;
+                let t = this.pacmanData.tile;
+                let dir = this.pacmanData.dir;
                 return t.get(dir).get(dir).get(dir).get(dir);
             },
             animations : {
@@ -92,9 +92,9 @@ export default (label, options) => {
             scatterTarget : 979,
             defaultAnimation : 'up',
             getChaseTarget : function() {
-                var pacmanTile = this.pacmanData.tile;
-                var blinkyTile = this.blinky.getTile();
-                var dir = this.pacmanData.dir;
+                let pacmanTile = this.pacmanData.tile;
+                let blinkyTile = this.blinky.getTile();
+                let dir = this.pacmanData.dir;
 
                 pacmanTile = pacmanTile.get(dir).get(dir); // Two tiles in front of pacman
 
@@ -138,8 +138,8 @@ export default (label, options) => {
             scatterTarget : 953,
             defaultAnimation : 'up',
             getChaseTarget : function() {
-                var t = this.pacmanData.tile;
-                var d = getDistance(t, this.getTile());
+                let t = this.pacmanData.tile;
+                let d = getDistance(t, this.getTile());
                 if (d > 16 * t.w) return t;
                 else return this.scatterTarget;
             },
