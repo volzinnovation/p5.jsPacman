@@ -1,6 +1,6 @@
 {
   "name": "jsPacman",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "HTML5 / JavaScript DOM based remake of the classic Ms Pac-Man game",
   "main": "dist/index.html",
   "scripts": {
@@ -10,9 +10,9 @@
     "test": "webpack test/*.js -o tmp/test.js && mocha --require jsdom-global/register --reporter nyan tmp/test.js",
     "demo:publish": "npm run test && npm run build && cp CNAME ./dist/ && cd dist && git init && git commit --allow-empty -m 'Update demo' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -m 'Update demo' && git push https://github.com/8tentaculos/jsPacman.git gh-pages --force"
   },
-  "repository": "github:8tentaculos/jsPacman",
+  "repository": "github:volzinnovation/p5.jsPacman",
   "homepage": "https://pacman.js.org",
-  "bugs": "https://github.com/8tentaculos/jsPacman/issues",
+  "bugs": "https://github.com/volzinnovation/p5.jsPacman/issues",
   "keywords": [
     "game",
     "javascript",
