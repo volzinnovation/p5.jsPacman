@@ -5,9 +5,9 @@ jsPacman
 
 jsPacman is a HTML5 / JavaScript DOM based remake of the classic [Ms. Pac-Man](https://en.wikipedia.org/wiki/Ms._Pac-Man) game.
 
-Play Demo
+Play Game
 -----------
-[pacman.js.org](https://pacman.js.org/)
+[Ms. Pacman](https://pacman.raphaelvolz.de/)
 
 Credits
 -----------
@@ -18,7 +18,8 @@ Credits
 
 Deployment
 -----------
-Copy contents of dist folder to a web server of choice. 
+* Copy contents of docs folder to a web server of choice.  
+* Running it locally only works through a web server NOT from disk (will throw Fetch API errors)
 
 Development
 -----------
