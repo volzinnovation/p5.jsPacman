@@ -11,10 +11,10 @@ Play Game
 
 Credits
 -----------
-* Game Copyright (c) 2014-2020 Alberto Masuelli (8tentaculos)
+* Game Implementation by [Alberto Masuelli (8tentaculos)](https://github.com/8tentaculos)
 * Game algorithm is based on [The Pac-Man Dossier](https://pacman.holenet.info/).
 * Sprites are from [spriters-resource](http://www.spriters-resource.com/game_boy_advance/namcomuseum/sheet/22732).
-* Updated dependencies to 2023 setting by volzinnovation, smaller cosmetics, e.g. use of let instead of var
+* Updated dependencies to 2023 settings in this repo, smaller cosmetics, e.g. use of let instead of var
 
 Deployment
 -----------
