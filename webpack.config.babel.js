@@ -22,10 +22,7 @@ export default {
         devtool : 'inline-source-map',
         devServer: {
             host : '0.0.0.0',
-            port : PORT || 8080,
-            watchOptions : {
-                poll : true
-            }
+            port : PORT || 8080
         }
     }),
 
