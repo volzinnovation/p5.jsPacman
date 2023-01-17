@@ -21,7 +21,7 @@ const times = [
 
 // This info was parsed from
 // https://pacman.holenet.info/#LvlSpecs
-var data = [
+let data = [
     [times, 0, "100", "80", "71", "75", "40", "20", "80", "10", "85", "90", "79", "50", "6", "5", map1, "maze-1"],
     [times, 1, "200", "90", "79", "85", "45", "30", "90", "15", "95", "95", "83", "55", "5", "5", map1, "maze-1"],
     [times, 2, "500", "90", "79", "85", "45", "40", "90", "20", "95", "95", "83", "55", "4", "5", map2, "maze-2"],
@@ -45,7 +45,7 @@ var data = [
     [times, 7, "5000", "90", "79", "95", "50", "120", "100", "60", "105", "0", "0", "0", "0", "0", map4, "maze-4"]
 ];
 
-var keys = [
+let keys = [
     'game.times',
     'game.bonusIndex',
     'game.bonusScore',

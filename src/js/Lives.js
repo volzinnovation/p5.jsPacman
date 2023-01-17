@@ -6,7 +6,7 @@ class Lives  {
 
         this.model = options.model;
 
-        for (var i = 0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             let pacman = new Pacman({
                 x : options.x + i * 70,
                 y : options.y,
@@ -28,7 +28,7 @@ class Lives  {
     }
 
     render() {
-        for (var i = 0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             if (i > this.model.lives - 2) this.pacmans[i].hide();
             else this.pacmans[i].show();
         }

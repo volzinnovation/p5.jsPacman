@@ -21,24 +21,24 @@ class Mode {
     resume() {}
 
     getNextDirection() {
-        var targetTile = this._getTarget(); // Target Tile
+        let targetTile = this._getTarget(); // Target Tile
 
-        var _dir = this.ghost._dir || this.ghost.dir;
+        let _dir = this.ghost._dir || this.ghost.dir;
 
-        var nextTile = this.ghost.getTile().get(_dir); // Next tile.
+        let nextTile = this.ghost.getTile().get(_dir); // Next tile.
 
-        var directions = ['u', 'l', 'd', 'r']; // Preferred direction order.
+        let directions = ['u', 'l', 'd', 'r']; // Preferred direction order.
 
-        var nextDirection, lastDistance;
+        let nextDirection, lastDistance;
 
-        for (var i = 0; i < 4; i++) {
-            var dir = directions[i];
+        for (let i = 0; i < 4; i++) {
+            let dir = directions[i];
 
             if (dir === this.ghost._getOpDirection(_dir)) continue; // Cant't go back.
 
             if (this.canGo(dir, nextTile)) {
-                var testTile = nextTile.get(dir);
-                var distance = getDistance(testTile, targetTile);
+                let testTile = nextTile.get(dir);
+                let distance = getDistance(testTile, targetTile);
 
                 if (typeof lastDistance === 'undefined' || lastDistance > distance) {
                     nextDirection = dir;
@@ -58,7 +58,7 @@ class Mode {
 
     canGo(dir, tile) {
         if (!tile) tile = this.ghost.getTile();
-        var nextTile = tile.get(dir);
+        let nextTile = tile.get(dir);
 
         if (!nextTile) return false;
 
@@ -71,7 +71,7 @@ class Mode {
     }
 
     onExit() {
-        var tile = this.ghost.getTile();
+        let tile = this.ghost.getTile();
         if (!tile.isHouse()) {
             this.ghost._turnBack = true;
         }

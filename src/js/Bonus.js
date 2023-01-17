@@ -91,7 +91,7 @@ class Bonus extends Character {
         Character.prototype.move.call(this, this._dir);
         // Eat or eaten!
         if (!this._eatEvent) {
-            var pacmanTile = this.pacmanData.tile, tile = this.getTile(), opposite = this._getOpDirection(this._dir);
+            let pacmanTile = this.pacmanData.tile, tile = this.getTile(), opposite = this._getOpDirection(this._dir);
             if (pacmanTile === tile || (this.pacmanData.dir === opposite && pacmanTile === tile.get(opposite))) {
                 this._eatEvent = true;
 
@@ -104,24 +104,24 @@ class Bonus extends Character {
     }
 
     getNextDirection() {
-        var targetTile = this._getTarget(); // Target Tile
+        let targetTile = this._getTarget(); // Target Tile
 
-        var _dir = this._dir || this.dir;
+        let _dir = this._dir || this.dir;
 
-        var nextTile = this.getTile().get(_dir); // Next tile.
+        let nextTile = this.getTile().get(_dir); // Next tile.
 
-        var directions = ['u', 'l', 'd', 'r']; // Preferred direction order.
+        let directions = ['u', 'l', 'd', 'r']; // Preferred direction order.
 
-        var nextDirection, lastDistance;
+        let nextDirection, lastDistance;
 
-        for (var i = 0; i < 4; i++) {
-            var dir = directions[i];
+        for (let i = 0; i < 4; i++) {
+            let dir = directions[i];
 
             if (dir === this._getOpDirection(_dir)) continue; // Cant't go back.
 
             if (this.canGo(dir, nextTile)) {
-                var testTile = nextTile.get(dir);
-                var distance = getDistance(testTile, targetTile);
+                let testTile = nextTile.get(dir);
+                let distance = getDistance(testTile, targetTile);
 
                 if (typeof lastDistance === 'undefined' || lastDistance > distance) {
                     nextDirection = dir;
@@ -136,7 +136,7 @@ class Bonus extends Character {
     canGo(dir, tile) {
         if (!tile) tile = this.getTile();
 
-        var nextTile = tile.get(dir);
+        let nextTile = tile.get(dir);
 
         if (!nextTile) return false;
 

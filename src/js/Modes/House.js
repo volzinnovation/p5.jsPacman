@@ -26,7 +26,7 @@ class House extends Mode {
     move() {
         if (!this._startTime) this._startTime = ts();
 
-        var tile = this.ghost.getTile();
+        let tile = this.ghost.getTile();
 
         if (!this._prepareExit && ts() - this._startTime > this.ghost.waitTime && !tile.isWall()) {
             this._prepareExit = true;
@@ -85,7 +85,7 @@ class House extends Mode {
     onExit() {
         this._startTime = null;
 
-        var tile = this.ghost.getTile();
+        let tile = this.ghost.getTile();
 
         this.ghost._dir = 'l';
         this.ghost._nextDir = 'l';

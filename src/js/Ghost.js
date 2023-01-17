@@ -198,7 +198,7 @@ class Ghost extends Character {
             mode = this.globalMode;
         }
 
-        var house = this.modes.house, dead = this.modes.dead, frightened = this.modes.frightened;
+        let house = this.modes.house, dead = this.modes.dead, frightened = this.modes.frightened;
 
         if (mode === frightened && (this.mode === house || this.mode === dead)) {
             this.frightened = mode;
@@ -226,7 +226,7 @@ class Ghost extends Character {
         this.mode.move();
         // Eat or eaten!
         if (!this._eatEvent) {
-            var pt = this.pacmanData.tile, t = this.getTile(), op = this._getOpDirection(this.dir);
+            let pt = this.pacmanData.tile, t = this.getTile(), op = this._getOpDirection(this.dir);
             if (pt === t || (this.pacmanData.dir === op && pt === t.get(op))) {
                 this._eatEvent = true;
                 if (this.mode === this.modes.frightened) {

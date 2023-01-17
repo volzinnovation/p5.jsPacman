@@ -13,14 +13,14 @@ class Frightened extends Mode {
     }
 
     getNextDirection() {
-        var nextTile = this.ghost.getTile().get(this.ghost._dir); // Next tile.
+        let nextTile = this.ghost.getTile().get(this.ghost._dir); // Next tile.
 
-        var directions = ['u', 'r', 'd', 'l', 'u', 'r', 'd', 'l']; // Clockwise direction order.
+        let directions = ['u', 'r', 'd', 'l', 'u', 'r', 'd', 'l']; // Clockwise direction order.
 
         // Select random direction. Then try that direction or change following clockwise order.
-        var idx = rnd(4);
+        let idx = rnd(4);
 
-        var nextDirection = directions[idx];
+        let nextDirection = directions[idx];
 
         while (nextDirection && (nextDirection === this.ghost._getOpDirection(this.ghost._dir)  || !this.canGo(nextDirection, nextTile))) {
             nextDirection = directions[++idx];

@@ -78,7 +78,7 @@ class Character extends Item {
     }
 
     update() {
-        var tile = this.getTile();
+        let tile = this.getTile();
 
         // Fix float point offset.
         if (Math.abs(this.y - tile.y) < 1) this.y = tile.y;
@@ -129,14 +129,14 @@ class Character extends Item {
         if (!dir) dir = this.dir;
         if (!dir) return;
 
-        var tile = this.getTile(), step, _step = this.getStep();
+        let tile = this.getTile(), step, _step = this.getStep();
         // Could go that direction.
         if ((dir != this.dir || this._preturn) && this._canGo(dir)) {
 
             if (((dir !== this.dir && dir !== this._getOpDirection()) || this._preturn) && !this._isCentered()) {
                 // Not in the center of the tile. Befor turn, set step so on next frame we get into the center.
                 if (this._isV(dir)) {
-                    var diffX = Math.abs(this.x - tile.x);
+                    let diffX = Math.abs(this.x - tile.x);
                     if (this.preturn) { // Set preturn to true to turn faster on corners.
                         if (!this._isCentered('x')) {
                             if (this.x > tile.x) this.x -= this.getMin(diffX, _step);
@@ -148,7 +148,7 @@ class Character extends Item {
                     }
                 }
                 if (this._isH(dir)) {
-                    var diffY = Math.abs(this.y - tile.y);
+                    let diffY = Math.abs(this.y - tile.y);
                     if (this.preturn) { // Set preturn to true to turn faster on corners.
                         if (!this._isCentered('y')) {
                             if (this.y > tile.y) this.y -= this.getMin(diffY, _step);
@@ -238,8 +238,8 @@ class Character extends Item {
     }
 
     _isCentered(xy) {
-        var tile = this.getTile();
-        var x = tile.x === this.x, y = tile.y === this.y;
+        let tile = this.getTile();
+        let x = tile.x === this.x, y = tile.y === this.y;
 
         if (xy === 'x') return x;
         if (xy === 'y') return y;
@@ -247,8 +247,8 @@ class Character extends Item {
     }
 
     getMin() {
-        var min = null;
-        for (var i = 0, l = arguments.length; i < l; i++)
+        let min = null;
+        for (let i = 0, l = arguments.length; i < l; i++)
             if (min === null || arguments[i] < min) min = arguments[i];
 
         return min;

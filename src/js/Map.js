@@ -17,11 +17,11 @@ class Map {
         this.tunnels = [];
 
         // Instantiate tiles and store them.
-        for (var y = 0; y < this.height; y++) {
-            var r = data[y];
-            for (var x = 0; x < this.width; x++) {
-                var code = r.charAt(x);
-                var tile = new Tile(code, x, y, this);
+        for (let y = 0; y < this.height; y++) {
+            let r = data[y];
+            for (let x = 0; x < this.width; x++) {
+                let code = r.charAt(x);
+                let tile = new Tile(code, x, y, this);
                 this.tiles.push(tile);
                 if (tile.isHouse() && !this.house) { // Store left house door
                     this.house = tile;
@@ -51,23 +51,23 @@ class Map {
         if (row > this.height - 1) row = 0;
         if (row < 0) row = this.height - 1;
 
-        var idx = (row * this.width) + col;
+        let idx = (row * this.width) + col;
 
         return this.tiles[idx] || null;
     }
 
     destroyItems() {
-        var i = this.tiles.length;
+        let i = this.tiles.length;
         while (i--) {
-            var t = this.tiles[i];
+            let t = this.tiles[i];
             if (t.item) t.item.destroy();
         }
     }
 
     hideItems() {
-        var i = this.tiles.length;
+        let i = this.tiles.length;
         while (i--) {
-            var t = this.tiles[i];
+            let t = this.tiles[i];
             if (t.item) t.item.hide();
         }
     }

@@ -167,7 +167,7 @@ class JsPacman extends Game {
 
         this.el.classList.add(this.maze);
 
-        var dotAnimationLabel = 'white';
+        let dotAnimationLabel = 'white';
         if (this.maze === 'maze-2') dotAnimationLabel = 'yellow';
         if (this.maze === 'maze-3') dotAnimationLabel = 'red';
 
@@ -176,9 +176,9 @@ class JsPacman extends Game {
         this._destroyBonus = 0;
         this._showBonus = 500;
 
-        var i = this.map.tiles.length, total = 0;
+        let i = this.map.tiles.length, total = 0;
         while (i--) {
-            var tile = this.map.tiles[i];
+            let tile = this.map.tiles[i];
             if (tile.code === '.') {
                 let dot = makeDot({
                     defaultAnimation : dotAnimationLabel,
@@ -300,7 +300,7 @@ class JsPacman extends Game {
             this.bonus.destroy();
         }
 
-        var bonusTile = this.map.tunnels[this.map.tunnels.length - 1];
+        let bonusTile = this.map.tunnels[this.map.tunnels.length - 1];
 
         this.bonus = makeBonus(this.bonusIndex, {
             map : this.map,
@@ -632,7 +632,7 @@ class JsPacman extends Game {
             this._muted = !this._muted;
             this.muteSound(this._muted);
 
-            var el = this.elements.soundStatus;
+            let el = this.elements.soundStatus;
 
             if (this._muted) el.classList.remove('on');
             else el.classList.add('on');
