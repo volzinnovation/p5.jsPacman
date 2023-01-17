@@ -5,7 +5,7 @@
   "main": "dist/index.html",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "npm run clean && cross-env NODE_ENV=production webpack",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack && cp -r dist docs",
     "clean": "rimraf ./dist ./tmp",
     "test": "webpack test/*.js -o tmp/test.js && mocha --require jsdom-global/register --reporter nyan tmp/test.js",
     "demo:publish": "npm run test && npm run build && cp CNAME ./dist/ && cd dist && git init && git commit --allow-empty -m 'Update demo' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -m 'Update demo' && git push https://github.com/8tentaculos/jsPacman.git gh-pages --force"
